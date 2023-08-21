@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /quizzes/{quizId} {
+      allow read: if resource.data.published == true || resource.data.creator == request.auth.uid;
+      allow create: if request.auth != null;
+    }
+
+    match /requests/{uid}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    match /extractedText/{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
