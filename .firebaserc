@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "reevize"
+  },
+  "targets": {},
+  "etags": {
+    "reevize": {
+      "extensionInstances": {
+        "firestore-palm-gen-text": "3296677f662ab83f17c3b7dcdae43117d0d40273b1bcd0e0d13fbe34c24d8600",
+        "firestore-chatgpt-bot": "6a72cb275f12a3b70201cc1c23f256774cfe20cb54339140ce32823ffe753991",
+        "storage-extract-image-text": "02f07e5654396fe24b7219f1932374ecd1f3bd66b692fe2dc6518d290c3983dc"
+      }
+    }
   }
 }

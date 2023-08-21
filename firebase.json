@@ -1,22 +1,35 @@
 {
-  "functions": { "source": ".output/server" },
+  "functions": {
+    "source": ".output/server"
+  },
   "firestore": {
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "hosting": [{
-    "site": "reevize",
-    "public": ".output/public",
-    "cleanUrls": true,
-    "rewrites": [{ "source": "**", "function": "server" }],
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }],
+  "hosting": [
+    {
+      "site": "reevize",
+      "public": ".output/public",
+      "cleanUrls": true,
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "server"
+        }
+      ],
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ],
   "storage": {
     "rules": "storage.rules"
   },
-  "extensions": {}
+  "extensions": {
+    "firestore-palm-gen-text": "googlecloud/firestore-palm-gen-text@0.1.7",
+    "firestore-chatgpt-bot": "shiftescape/firestore-chatgpt-bot@0.0.1",
+    "storage-extract-image-text": "googlecloud/storage-extract-image-text@0.1.3"
+  }
 }
